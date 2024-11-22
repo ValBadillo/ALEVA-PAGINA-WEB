@@ -1,0 +1,768 @@
+/* Estilos generales */
+body {
+  font-family: 'Abel', sans-serif;
+  background-color: #f6f1eb;
+  margin: 0;
+  padding: 0;
+  color: #000; /* Color negro para el texto */
+}
+
+/* Barra de navegación */
+.navbar {
+  background: linear-gradient(90deg, rgba(224, 224, 224, 0.3), rgba(176, 176, 176, 0.6), rgba(224, 224, 224, 0.3));
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del logo ALEVA 1 */
+.aleva-logo-container {
+  position: relative;
+  height: 100vh; /* Altura completa de la ventana */
+  overflow: hidden;
+}
+
+.aleva-logo {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 70%;
+  width: 1000px;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.aleva-2-logo {
+  position: absolute;
+  top: 10%;
+  transform: translate(-60%, -50%);
+  left: 40%;
+  width: 900px;
+  height: auto;
+  z-index: 6;
+}
+
+/* Texto "WELCOME TO" */
+.welcome-text {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  text-align: left;
+  z-index: 7;
+}
+
+/* Texto debajo del logo ALEVA 2 */
+.description-text {
+  position: absolute;
+  top: 63%;
+  transform: translateX(-110%);
+  left: 50%;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  text-align: left;
+  color: #000;
+  z-index: 7;
+}
+
+/* Contenedor de los círculos */
+.circles-container {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  display: flex;
+  gap: 50px;
+  z-index: 7;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.circle:nth-child(1) {
+  background-color: #55678B;
+}
+
+.circle:nth-child(2) {
+  background-color: #2C2573;
+}
+
+/* Estilos del botón encima de los círculos */
+.button-above-circles {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  padding: 15px 100px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(224, 224, 224, 0.3),
+    rgba(176, 176, 176, 0.6),
+    rgba(224, 224, 224, 0.3)
+  );
+  backdrop-filter: blur(15px);
+  color: #000;
+  font-family: 'Abel', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 8;
+}
+
+.button-above-circles:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección Who We Are */
+.who-we-are-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.who-we-are-container h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.who-we-are-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Hexágonos */
+/* Hexágonos */
+.hexagon-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+
+.hexagon {
+  position: relative;
+  width: 450px;
+  height: 350px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  background: #575555; /* Color gris base */
+  cursor: pointer;
+  will-change: transform;
+}
+
+.hexagon:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hexagon:hover::before {
+  transform: translate(-50%, -50%) scale(1.05); /* Efecto de movimiento */
+}
+
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Tamaño del hexágono negro */
+  height: 90%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: linear-gradient(90deg, #000, #444); /* Fondo negro degradado */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.hexagon:hover {
+  transform: translateY(-5px) rotate(1deg); /* Pequeño movimiento */
+}
+
+.hexagon .hexagon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-family: 'Abel', sans-serif;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  z-index: 2; /* Encima del hexágono negro */
+  max-width: 280px;
+  padding: 10px;
+}
+
+/* Mapa integrado */
+.hexagon:nth-child(3) iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Tamaño del mapa */
+  height: 50%; /* Tamaño del mapa */
+  z-index: 2;
+  border-radius: 15px;
+  border: none;
+}
+
+/* Sección Our Work */
+/* Sección Our Work */
+/* Estilo general para la sección, centrando el contenido y asignando un color de fondo */
+#our-work {
+  text-align: center; /* Centra horizontalmente el contenido */
+  padding: 40px 20px; /* Añade espaciado alrededor del contenido */
+  background-color: #f6f1eb; /* Color de fondo claro */
+}
+
+/* Título de la sección */
+/* Configuración del título principal de la sección */
+#our-work h2 {
+  font-size: 35px; /* Aumenta el tamaño del texto */
+  font-weight: bold; /* Mantiene el texto en negrita */
+  color: #000; /* Asegura que el color sea negro */
+  margin-bottom: 20px; /* Espaciado inferior */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade sombra para mayor impacto */
+}
+
+/* Estilo del cuadro grande */
+/* Este contenedor incluye las dos imágenes y las posiciona */
+.our-work-card {
+  width: 700px; /* Ancho fijo del cuadro */
+  height: 680px; /* Altura fija del cuadro */
+  background: linear-gradient(90deg, #999999, #666666, #333333); /* Fondo con un degradado */
+  border-radius: 20px; /* Bordes redondeados para el diseño */
+  margin: 100px auto; /* Centra el cuadro vertical y horizontalmente */
+  display: flex; /* Usado para alinear elementos internos */
+  align-items: center; /* Alinea elementos verticalmente */
+  justify-content: center; /* Alinea elementos horizontalmente */
+  position: relative; /* Establece un contexto de posicionamiento */
+  overflow: visible; /* Permite que los elementos internos sobresalgan */
+}
+
+/* Primera imagen */
+/* Configura la imagen principal con su diseño */
+.our-work-image.first-image {
+  width: 400px; /* Ancho de la imagen */
+  height: 400px; /* Altura de la imagen */
+  position: absolute; /* Permite ajustar su posición manualmente */
+  top: -30px; /* Desplaza la imagen hacia arriba */
+  left: 2%; /* Desplaza la imagen hacia la izquierda */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Evita que el contenido interno se desborde */
+  background: url('FONDO OUR.JPG') no-repeat center center; /* Imagen de fondo centrada */
+  background-size: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra para profundidad */
+  z-index: 2; /* Asegura que esta imagen esté encima de elementos de menor prioridad */
+}
+
+/* Contenedor del logo y texto dentro de la primera imagen */
+/* Agrupa y posiciona el logo y el texto */
+.our-work-image.first-image .logo-container {
+  position: absolute; /* Permite un ajuste manual de su posición */
+  top: 50%; /* Centra el contenido verticalmente */
+  left: 50%; /* Centra el contenido horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición al centro exacto */
+  text-align: center; /* Centra el texto internamente */
+  z-index: 3; /* Asegura que el contenido esté encima de la imagen */
+}
+
+/* Texto encima del logo */
+/* Estilo para el texto "Introducing" */
+.our-work-image.first-image .logo-container .logo-header {
+  font-size: 50px; /* Tamaño del texto */
+  color: white; /* Color blanco para destacar */
+  font-weight: bold; /* Negrita */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  margin-bottom: 15px; /* Espaciado entre el texto y el logo */
+}
+
+/* Logo dentro de la primera imagen */
+/* Configuración de tamaño y proporciones del logo */
+.our-work-image.first-image .logo-container img {
+  width: 160px; /* Tamaño del logo */
+  height: auto; /* Mantiene las proporciones */
+}
+
+/* Texto debajo del logo */
+/* Estilo para el texto debajo del logo */
+.our-work-image.first-image .logo-container .logo-text {
+  font-size: 40px; /* Tamaño del texto */
+  color: white; /* Color blanco */
+  font-weight: bold; /* Negrita */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+  margin-top: 10px; /* Espaciado entre el logo y el texto */
+}
+
+/* Segunda imagen */
+/* Configuración para la segunda imagen */
+.our-work-image.second-image {
+  width: 380px; /* Ancho de la imagen */
+  height: 380px; /* Altura de la imagen */
+  position: absolute; /* Posicionamiento manual */
+  top: 280px; /* Desplaza la imagen hacia abajo */
+  right: 3%; /* Desplaza la imagen hacia la derecha */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Evita desbordes */
+  background: url('FONDO OUR.JPG') no-repeat center center; /* Imagen de fondo centrada */
+  background-size: cover; /* Ajusta el fondo para cubrir el contenedor */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 2; /* Asegura que esté encima de otros elementos */
+}
+
+/* Contenedor del texto en la segunda imagen */
+/* Estilo para el texto descriptivo */
+.our-work-image.second-image .text-container {
+  position: absolute; /* Posicionamiento manual */
+  top: 20%; /* Posiciona el texto en la parte superior */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el texto exactamente */
+  z-index: 3; /* Asegura que el texto esté encima de la imagen */
+  color: white; /* Color blanco */
+  text-align: center; /* Centra el texto */
+  font-size: 18px; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  line-height: 1.5; /* Espaciado entre líneas */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+  width: 90%; /* Ancho máximo del contenedor */
+}
+
+/* Lista de características */
+/* Configura el estilo de la lista */
+.our-work-image.second-image .features-list {
+  position: absolute; /* Posicionamiento manual */
+  top: 130%; /* Baja la lista más hacia abajo */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, 0); /* Ajusta al centro exacto */
+  z-index: 3; /* Asegura que la lista esté encima de la imagen */
+  padding: 0; /* Quita el padding predeterminado */
+  list-style: none; /* Quita el estilo predeterminado de lista */
+  text-align: center; /* Centra el texto de la lista */
+  color: white; /* Color blanco */
+  font-size: 16px; /* Tamaño del texto */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 80%; /* Ancho de la lista */
+}
+
+.our-work-image.second-image .features-list li {
+  margin-bottom: 15px; /* Espaciado entre elementos */
+  position: relative; /* Contexto para el punto personalizado */
+  font-weight: bold; /* Negrita */
+}
+
+/* Punto personalizado para los elementos de la lista */
+/* Añade un punto antes de cada elemento */
+.our-work-image.second-image .features-list li::before {
+  content: "•"; /* Punto personalizado */
+  position: absolute; /* Posición relativa al elemento */
+  left: -20px; /* Ajuste para alinear el punto */
+  color: white; /* Color blanco */
+  font-size: 20px; /* Tamaño del punto */
+}
+
+
+/* Texto adicional debajo de la lista */
+/* Configura el texto que aparece debajo de la lista en la segunda imagen */
+.our-work-image.second-image .extra-text {
+  position: absolute; /* Permite un posicionamiento personalizado */
+  top: 280%; /* Ajusta el texto más hacia abajo */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translate(-50%, 0); /* Centra el texto perfectamente */
+  font-size: 20px; /* Aumenta el tamaño del texto */
+  color: white; /* Color blanco para mejor visibilidad */
+  text-shadow: 3px 3px 10px rgba(128, 0, 128, 1); /* Sombra más pronunciada y morado */
+  font-weight: bold; /* Aplica negrita para énfasis */
+  text-align: center; /* Centra el texto */
+  filter: blur(0.3px); /* Reduce el desenfoque para que sea más legible */
+  opacity: 1; /* Máxima opacidad para hacer el texto más fuerte */
+  white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+}
+
+
+/* Botones de descarga */
+/* Configuración para las imágenes en la parte inferior izquierda */
+.download-buttons {
+  position: absolute; /* Permite posicionamiento personalizado */
+  bottom: 10px; /* Posiciona los botones cerca del borde inferior */
+  left: 10px; /* Posiciona los botones cerca del borde izquierdo */
+  display: flex; /* Organiza las imágenes en línea */
+  gap: 10px; /* Espaciado entre las imágenes */
+}
+
+.download-buttons img {
+  width: 120px; /* Ajusta el ancho de las imágenes */
+  height: auto; /* Mantiene las proporciones */
+  border: none; /* Elimina cualquier borde */
+  box-shadow: none; /* Elimina cualquier sombra */
+  background: none; /* Asegura que no haya fondo aplicado */
+  padding: 0; /* Asegura que no haya padding aplicado */
+}
+
+
+
+/* Sección What They Say */
+#what-they-say {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f6f1eb; /* Fondo claro */
+}
+
+#what-they-say h2 {
+  font-size: 35px; /* Tamaño inicial del título */
+  font-weight: bold; /* Negrita */
+  color: #000; /* Negro */
+  margin-bottom: 20px; /* Espaciado inferior */
+  text-transform: uppercase; /* Convierte a mayúsculas */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+}
+
+/* Tarjeta de calificación */
+.rating-card {
+  width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+  max-width: 400px; /* Ancho máximo en pantallas grandes */
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(90deg, #999, #666, #333); /* Degradado gris */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+  text-align: center;
+}
+
+.rating-card h3 {
+  font-size: 20px; /* Tamaño del texto */
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Estrellas */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* Espaciado entre estrellas */
+  margin-bottom: 10px;
+}
+
+.stars span {
+  font-size: 30px;
+  color: #ccc; /* Color de estrellas apagadas */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.stars span:hover,
+.stars span:hover ~ span {
+  color: rgb(0, 0, 0); /* Resalta las estrellas al pasar el mouse */
+}
+
+/* Puntuación */
+#score {
+  font-size: 18px;
+  color: rgb(13, 13, 13);
+  margin: 10px 0;
+}
+
+/* Comentarios */
+#comment {
+  width: 90%; /* Ocupa todo el ancho disponible */
+  height: 80px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #1b1a1a;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  resize: none;
+}
+
+/* Botón de envío */
+#submit-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #666;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+  background-color: #333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  #what-they-say h2 {
+    font-size: 28px; /* Reduce el tamaño del título en pantallas pequeñas */
+  }
+
+  .stars span {
+    font-size: 24px; /* Ajusta el tamaño de las estrellas */
+  }
+
+  #comment {
+    height: 70px; /* Ajusta la altura del cuadro de comentarios */
+    font-size: 12px; /* Reduce el tamaño del texto */
+  }
+
+  #submit-btn {
+    font-size: 14px; /* Reduce el tamaño del botón */
+    padding: 8px 15px; /* Ajusta el padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .rating-card {
+    padding: 15px; /* Reduce el padding general */
+  }
+
+  #what-they-say h2 {
+    font-size: 24px; /* Tamaño del título aún más pequeño */
+  }
+
+  .stars span {
+    font-size: 20px; /* Tamaño reducido para las estrellas */
+  }
+
+  #comment {
+    height: 60px; /* Más compacto */
+    font-size: 12px;
+  }
+
+  #submit-btn {
+    font-size: 12px; /* Ajusta el texto del botón */
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .our-work-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .our-work-image.first-image,
+  .our-work-image.second-image {
+    width: 90%;
+    height: 300px;
+    position: relative;
+    margin: 20px auto;
+  }
+
+  .our-work-image.first-image {
+    top: 0;
+    left: 0;
+  }
+
+  .our-work-image.second-image {
+    top: 0;
+    right: 0;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .our-work-image.second-image .features-list li {
+      font-size: 14px; /* Reduce el tamaño del texto en pantallas pequeñas */
+  }
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .our-work-card {
+    width: 90%;
+    height: 400px;
+  }
+
+  .our-work-image.first-image, .our-work-image.second-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .logo-container img {
+    width: 80px;
+  }
+
+  .logo-container .logo-text {
+    font-size: 16px;
+  }
+
+  .description-container .description-text {
+    font-size: 14px;
+  }
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .aleva-logo {
+    width: 700px;
+    left: 50%;
+  }
+
+  .aleva-2-logo {
+    width: 600px;
+    left: 45%;
+  }
+
+  .description-text {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .welcome-text {
+    font-size: 24px;
+  }
+
+  .button-above-circles {
+    top: 85%;
+    left: 10%;
+    padding: 12px 80px;
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hexagon {
+    width: 150px;
+    height: 100px;
+  }
+
+  .hexagon .hexagon-text {
+    font-size: 12px;
+    padding: 5px;
+    max-width: 100px;
+  }
+
+  .hexagon iframe {
+    width: 60%;
+    height: 50%;
+  }
+
+  .our-work-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .our-work-card {
+    width: 90%; /* Ajusta el ancho al 90% de la pantalla */
+    height: 400px; /* Reduce la altura en pantallas pequeñas */
+  }
+
+  @media (max-width: 768px) {
+    .our-work-image.second-image .text-container {
+      top: 35%; /* Ajusta la posición en pantallas pequeñas */
+      font-size: 14px; /* Tamaño más pequeño en pantallas pequeñas */
+      line-height: 1.4; /* Ajusta el espaciado para que se vea bien */
+    }
+  }
+  
+  
+
+}
