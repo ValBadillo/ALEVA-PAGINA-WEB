@@ -1058,71 +1058,128 @@ body {
 
 .crew-container {
   display: flex;
-  justify-content: space-evenly; /* Espaciado entre columnas */
-  align-items: flex-start; /* Alinea imágenes arriba */
+  justify-content: center; /* Centra las columnas */
+  align-items: flex-start; /* Alinea imágenes hacia la parte superior */
   flex-wrap: wrap; /* Permite que las imágenes se adapten */
-  gap: 5px; /* Reduce el espaciado entre columnas */
+  gap: 60px; /* Espaciado entre columnas reducido */
+  margin-top: 40px; /* Mueve todo el grupo de imágenes hacia abajo */
 }
 
 .crew-column {
   display: flex;
   flex-direction: column; /* Las imágenes están en columna */
-  gap: 5px; /* Reduce el espaciado entre imágenes */
-}
-
-
-.crew-column.left {
-  align-items: flex-end; /* Alinea las imágenes hacia la derecha */
-}
-
-.crew-column.center {
-  align-items: center; /* Centra las imágenes */
+  align-items: center; /* Centra el contenido */
+  gap: 15px; /* Reduce el espaciado entre imágenes */
+  position: relative; /* Permite ajustes de posición */
 }
 
 .crew-column.right {
-  align-items: flex-start; /* Alinea las imágenes hacia la izquierda */
+  margin-top: 300px; /* Baja la posición de Alejandro */
 }
 
 .crew-image {
   width: 150px; /* Ajusta el tamaño de las imágenes */
   height: auto; /* Mantiene proporción */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+  border-radius: 15px; /* Bordes redondeados más suaves */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
 }
+
+.crew-text {
+  text-align: center; /* Centra el texto */
+  max-width: 220px; /* Limita el ancho del texto */
+  margin: 10px auto; /* Espaciado superior e inferior */
+  line-height: 1.8; /* Mejora la legibilidad */
+  font-family: 'Roboto', sans-serif; /* Cambia la fuente a algo moderno y legible */
+  color: #333333; /* Gris oscuro para un mejor contraste */
+}
+
+.crew-text strong {
+  font-size: 24px; /* Tamaño más grande para el nombre */
+  font-weight: bold; /* Negrita para destacar */
+  background: radial-gradient(circle, #000000, #333333, #4D4D4D, #595959, #666666); /* Gradiente para el nombre */
+  -webkit-background-clip: text; /* Aplica el gradiente al texto */
+  -webkit-text-fill-color: transparent; /* Hace el texto transparente excepto por el gradiente */
+  display: inline-block; /* Asegura que el gradiente funcione correctamente */
+  text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Sombra suave para un efecto elegante */
+}
+
+.crew-text i {
+  font-size: 16px; /* Texto más pequeño para la cita */
+  font-style: italic; /* Aplica cursiva */
+  color: #666666; /* Un tono gris más claro para contrastar */
+  display: block; /* Cada cita aparece en su línea */
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.crew-text span {
+  font-size: 16px; /* Tamaño del texto para los roles */
+  display: block; /* Cada rol aparece en su propia línea */
+  margin: 5px 0; /* Espaciado entre los roles */
+  color: #4D4D4D; /* Color gris oscuro */
+}
+
+/* Estilo para las sombras del texto */
+.crew-text strong {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.crew-text i {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Estilos responsivos */
 @media (max-width: 1024px) {
   .crew-container {
-    justify-content: center; /* Centra todas las columnas en pantallas medianas */
-  }
-
-  .crew-column {
-    align-items: center; /* Centra las imágenes en pantallas medianas */
+    gap: 30px; /* Reduce el espaciado entre columnas en pantallas medianas */
   }
 
   .crew-image {
-    width: 180px; /* Reduce ligeramente el tamaño de las imágenes */
+    width: 140px; /* Reduce el tamaño de las imágenes */
+  }
+
+  .crew-text strong {
+    font-size: 18px; /* Reduce el tamaño del nombre */
+  }
+
+  .crew-text i {
+    font-size: 13px; /* Reduce el tamaño de las citas */
   }
 }
 
 @media (max-width: 768px) {
   .crew-container {
-    flex-direction: column; /* Cambia a un diseño de una sola columna */
+    flex-direction: column; /* Cambia a diseño de una sola columna */
     align-items: center; /* Centra todo */
   }
 
   .crew-image {
-    width: 160px; /* Ajusta aún más el tamaño */
+    width: 130px; /* Ajusta el tamaño de las imágenes */
+  }
+
+  .crew-text {
+    max-width: 200px; /* Reduce el ancho del texto */
   }
 }
 
 @media (max-width: 480px) {
-  .crew-image {
-    width: 140px; /* Tamaño más pequeño para móviles */
+  .crew-container {
+    gap: 20px; /* Reduce el espaciado entre columnas */
   }
 
-  #the-crew h2 {
-    font-size: 28px; /* Reduce el tamaño del título en móviles */
+  .crew-text strong {
+    font-size: 16px; /* Reduce aún más el tamaño del nombre */
+  }
+
+  .crew-text i {
+    font-size: 12px; /* Reduce aún más el tamaño de las citas */
   }
 }
+/* Efecto de movimiento al pasar el mouse sobre las imágenes */
+.crew-image {
+  transition: transform 0.3s ease-in-out; /* Transición suave al transform */
+}
 
+.crew-image:hover {
+  transform: translateY(-10px); /* Mueve la imagen hacia arriba 10px */
+}
